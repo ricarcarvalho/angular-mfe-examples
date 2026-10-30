@@ -1,0 +1,23 @@
+* {
+  color: white;
+}
+
+.shopping-cart {
+  display: flex;
+  flex-direction: column;
+  background-color: blueviolet;
+  padding: 16px 16px;
+}
+
+.shopping-cart .cart-title {
+  text-align: center;
+}
+
+.shopping-cart .cart-item {
+  display: flex;
+  gap: 8px;
+}
+
+.shopping-cart hr {
+  width: 100%;
+}

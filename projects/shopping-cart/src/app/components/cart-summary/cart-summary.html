@@ -1,0 +1,16 @@
+<div class="shopping-cart">
+  <h2 class="cart-title">Cart</h2>
+
+  @if (items().length === 0) {
+    <p>Your cart is empty.</p>
+  } @else {
+    @for (item of items(); track item.productId) {
+      <div class="cart-item">
+        <strong>{{ item.name }}</strong>
+        <span>{{ item.quantity }} x {{ item.price }}</span>
+      </div>
+    }
+    <hr />
+    <p>Total: {{ total() }}</p>
+  }
+</div>

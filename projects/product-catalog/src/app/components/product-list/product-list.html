@@ -8,15 +8,20 @@
         <span>{{ product.price }}</span>
       </div>
       <div class="product-actions">
-        <input
-          #quantity
-          type="number"
-          inputmode="numeric"
-          min="1"
-          step="1"
-          placeholder="1"
-          (input)="sanitizeQuantity($event)"
-        />
+        <div class="quantity-wrapper">
+          <input
+            #quantity
+            type="number"
+            inputmode="numeric"
+            min="1"
+            step="1"
+            placeholder="1"
+            (input)="sanitizeQuantity($event)"
+          />
+          @if (product.error) {
+            <span class="stock-error">Not enough stock</span>
+          }
+        </div>
         <button (click)="addToCart(product, +quantity.value)">Add to Cart</button>
       </div>
     </div>

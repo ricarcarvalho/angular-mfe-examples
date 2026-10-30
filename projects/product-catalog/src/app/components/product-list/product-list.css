@@ -16,12 +16,21 @@
   flex-shrink: 0;
 }
 
+.product-list .product-row .quantity-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-list .product-row .quantity-wrapper .stock-error {
+  color: red;
+}
+
 .product-list .product-row .product-details {
   width: 800px;
 }
 
 .product-list .product-row .product-actions {
   display: flex;
-  align-items: center;
+  align-items: start;
   gap: 8px;
 }

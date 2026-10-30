@@ -11,7 +11,7 @@ const CART_ITEM_ADDED_EVENT = 'cart:item-added';
   templateUrl: './product-list.html',
 })
 export class ProductList {
-  protected readonly products = PRODUCTS;
+  protected readonly products = PRODUCTS.map((product) => ({ ...product, error: false }));
 
   protected sanitizeQuantity(event: Event): void {
     const input = event.target as HTMLInputElement;
@@ -20,11 +20,15 @@ export class ProductList {
   }
 
   protected addToCart(product: Product, qtt: number): void {
-    console.log('Adding to cart:', product, qtt);
-
     if (qtt === 0) {
       return;
+    } else if (qtt > product.stock) {
+      product.error = true;
+      return;
     }
+
+    product.stock -= qtt;
+    product.error = false;
 
     window.dispatchEvent(
       new CustomEvent(CART_ITEM_ADDED_EVENT, {
