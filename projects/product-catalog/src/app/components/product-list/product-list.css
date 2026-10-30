@@ -1,0 +1,27 @@
+.product-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-list .product-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.product-list .product-row img {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.product-list .product-row .product-details {
+  width: 800px;
+}
+
+.product-list .product-row .product-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}

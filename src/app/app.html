@@ -1,0 +1,17 @@
+<main class="mfe-layout">
+  <section class="mfe-panel product-panel">
+    @if (productComponent(); as ProductCatalogComponent) {
+      <ng-container *ngComponentOutlet="ProductCatalogComponent" />
+    } @else {
+      <p>Loading products...</p>
+    }
+  </section>
+
+  <section class="mfe-panel cart-panel">
+    @if (cartComponent(); as ShoppingCartComponent) {
+      <ng-container *ngComponentOutlet="ShoppingCartComponent" />
+    } @else {
+      <p>Loading cart...</p>
+    }
+  </section>
+</main>

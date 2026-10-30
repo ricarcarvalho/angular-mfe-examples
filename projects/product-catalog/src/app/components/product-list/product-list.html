@@ -1,0 +1,24 @@
+<div class="product-list">
+  @for (product of products; track product.id) {
+    <div class="product-row">
+      <img [src]="product.imageUrl" [alt]="product.name" />
+      <div class="product-details">
+        <h2>{{ product.name }}</h2>
+        <p>{{ product.description }}</p>
+        <span>{{ product.price }}</span>
+      </div>
+      <div class="product-actions">
+        <input
+          #quantity
+          type="number"
+          inputmode="numeric"
+          min="1"
+          step="1"
+          placeholder="1"
+          (input)="sanitizeQuantity($event)"
+        />
+        <button (click)="addToCart(product, +quantity.value)">Add to Cart</button>
+      </div>
+    </div>
+  }
+</div>

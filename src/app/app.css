@@ -1,0 +1,11 @@
+.mfe-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 1fr);
+  gap: 32px;
+}
+
+@media (max-width: 800px) {
+  .mfe-layout {
+    grid-template-columns: 1fr;
+  }
+}

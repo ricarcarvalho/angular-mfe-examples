@@ -1,0 +1,6 @@
+.shopping-cart {
+  display: flex;
+  flex-direction: column;
+  background-color: blueviolet;
+  padding: 16px 16px;
+}
